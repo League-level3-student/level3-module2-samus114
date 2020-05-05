@@ -9,8 +9,16 @@ public class BubbleSorter extends Sorter{
 	//   You can use display.updateDisplay() to show the current
 	//   progress on the graph.
 	@Override
-	void sort(int[] array, SortingVisualizer display) {
-		
-	}
-	
+	void sort(int[] arr, SortingVisualizer display) {
+		for (int i = 0; i < arr.length; i++) {
+			for (int j = 0; j < arr.length - 1; j++) {
+			if (arr[j] > arr[j + 1]) {
+				int temp = arr[j];
+				arr[j] = arr[j + 1];
+				arr[j + 1] = temp;
+				display.updateDisplay();
+			}
+		}	
+		}		
+	}	
 }
